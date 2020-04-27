@@ -22,10 +22,13 @@ jobs:
     docker:
       - image: circleci/node:10-browsers
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "98:4d:55:4f:82:0b:84:c3:86:ac:8b:bd:2f:3b:f8:c9"
       - checkout
       - run: git config --global user.email "jef15938@gmail.com"
       - run: git config --global user.name "jef15938"
-      - run: git checkout master
+      - run: git checkout master && git reset origin/master --hard
       - run: git merge dev && git push origin/master
   
   deploy:
