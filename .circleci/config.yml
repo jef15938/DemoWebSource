@@ -29,7 +29,7 @@ jobs:
       - run: git config --global user.email "jef15938@gmail.com"
       - run: git config --global user.name "jef15938"
       - run: git checkout master && git reset origin/master --hard
-      - run: git merge dev && git push origin/master
+      - run: git merge dev && git push
   
   deploy:
     working_directory: ~/DemoWebSource
