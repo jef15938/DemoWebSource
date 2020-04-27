@@ -58,6 +58,13 @@ workflows:
             branches:
               only:
                 - dev
+      - merge-to-master:
+          filters:
+            branches:
+              only:
+                - dev
+          requires:
+            - test
       - deploy:
           filters:
             branches:
