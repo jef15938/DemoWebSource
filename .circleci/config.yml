@@ -16,14 +16,15 @@ jobs:
           key: DemoWebSource-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
-      - run: npm run test -- --no-watch --no-progress
+      - run: npm run test -- --no-watch --no-progress --code-coverage
+
       - run: ng build --prod
-      - run:
-          name: Creating Dummy Artifacts
-            command: |
-              echo "my artifact file" > /dist;
-              mkdir /dist;
-              # echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
-      - store_artifacts:
-        path: /DemoWebSource/dist
-        destination: /dist
+      # - run:
+      #     name: Creating Dummy Artifacts
+      #       command: |
+      #         echo "my artifact file" > /dist;
+      #         mkdir /dist;
+      #         # echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
+      # - store_artifacts:
+      #   path: /DemoWebSource/dist
+      #   destination: /dist
