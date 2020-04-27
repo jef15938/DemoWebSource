@@ -21,6 +21,8 @@ jobs:
           path: coverage
           destination: coverage
       # - run: npm run build -- --prod
+      - run : git config --global user.email "jef15938@gmail.com"
+      - run : git config --global user.name "jef15938"
       - run: npx ng deploy --no-silent
       # - run:
       #     name: Creating Dummy Artifacts
