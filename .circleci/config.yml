@@ -1,9 +1,10 @@
 version: 2
 jobs:
   build:
-    branches:
-      only:
-        - dev
+    filters:
+      branches:
+        only:
+          - dev
     working_directory: ~/DemoWebSource
     docker:
       - image: circleci/node:10-browsers
