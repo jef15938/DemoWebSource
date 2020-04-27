@@ -1,10 +1,31 @@
-version: 2
 jobs:
-  build:
+  test:
     filters:
       branches:
         only:
           - dev
+    working_directory: ~/DemoWebSource
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: DemoWebSource-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run: npm install
+      - save_cache:
+          key: DemoWebSource-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - "node_modules"
+      - run: npm run test -- --no-watch --no-progress --code-coverage
+      - store_artifacts:
+          path: coverage
+          destination: coverage
+  
+  deploy:
+    filters:
+      branches:
+        only:
+          - master
     working_directory: ~/DemoWebSource
     docker:
       - image: circleci/node:10-browsers
@@ -20,10 +41,13 @@ jobs:
           key: DemoWebSource-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
-      - run: npm run test -- --no-watch --no-progress --code-coverage
-      - store_artifacts:
-          path: coverage
-          destination: coverage
       - run: git config --global user.email "jef15938@gmail.com"
       - run: git config --global user.name "jef15938"
       - run: npx ng deploy --no-silent --base-href=/DemoWebSource/
+
+workflows:
+  version: 2
+  test-and-deploy:
+    jobs: 
+      - test
+      - deploy
