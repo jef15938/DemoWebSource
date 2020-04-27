@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    branches:
+      only:
+        - dev
+    working_directory: ~/DemoWebSource
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: DemoWebSource-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run: npm install
+      - save_cache:
+          key: DemoWebSource-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - "node_modules"
+      - run: npm run test -- --no-watch --no-progress
+      # - run: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
