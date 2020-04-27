@@ -16,6 +16,18 @@ jobs:
       - store_artifacts:
           path: coverage
           destination: coverage
+
+  merge-to-master:
+    working_directory: ~/DemoWebSource
+    docker:
+      - image: circleci/node:10-browsers
+    steps:
+      - checkout
+      - run: git config --global user.email "jef15938@gmail.com"
+      - run: git config --global user.name "jef15938"
+      - run: npx ng deploy --no-silent --base-href=/DemoWebSource/
+      - run: git checkout master
+      - run: git merge dev && git push origin/master
   
   deploy:
     working_directory: ~/DemoWebSource
