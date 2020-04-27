@@ -49,7 +49,7 @@ jobs:
             - "node_modules"
       - run: git config --global user.email "jef15938@gmail.com"
       - run: git config --global user.name "jef15938"
-      - run: npx ng deploy --no-silent --base-href=/DemoWebSource/
+      - run: npx ng deploy --no-silent --base-href=/DemoWebSource/ --message="[ci skip] - Auto build deploy"
 
 workflows:
   version: 2
