@@ -20,7 +20,8 @@ jobs:
       - store_artifacts:
           path: coverage
           destination: coverage
-      - run: npm run build -- --prod
+      # - run: npm run build -- --prod
+      - run: ng deploy
       # - run:
       #     name: Creating Dummy Artifacts
       #       command: |
