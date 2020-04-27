@@ -10,7 +10,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "fe:d9:a3:c9:e7:b4:16:f2:19:ad:0f:b8:3c:b4:6f:ec"
+            - "14:05:26:8d:32:1a:b3:9c:f3:b4:13:30:a7:06:f0:62"
       - checkout
       - restore_cache:
           key: DemoWebSource-{{ .Branch }}-{{ checksum "package-lock.json" }}
