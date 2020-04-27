@@ -1,0 +1,80 @@
+@import '../../app.component.scss';
+
+.menu {
+
+    position: absolute;
+    background-color: $menu-body-color;
+
+    top: 0;
+    left: 0;
+    // height: calc(100%-1.5rem);
+    // position: absolute;
+    // height: calc(100%-.1rem);
+    height: calc(100%) ;
+    width: 100%;
+    text-align: center;
+
+    // border-right-style: outset;
+}
+
+.menuHeader {
+    background-color: $menu-header-color;
+    height: #{$menu-header-height};
+}
+
+.menuImg {
+    position: absolute;
+    top: calc((#{$menu-header-height} - 2rem)/2);
+    right: 1rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+.menuArea {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: calc(100% - #{$menu-header-height});
+    padding: 0;
+    top: #{$menu-header-height};
+    margin-block-start: 0rem;
+    left: 0;
+    overflow: scroll;
+}
+.menuItem {
+    position: relative;
+    // top:0;
+    // display: block;
+   // height: 3rem;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    // font-weight: 100;
+    text-align: center;
+    vertical-align: auto;
+    
+  
+    // list-style-type: none;
+
+
+}
+
+.menuItem:hover {
+    background-color: $menu-header-color;
+    color: white;
+}
+
+.clickMenuItem {
+    position: relative;
+    height: 3rem;
+    // font-size: 1.5rem;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    text-align: center;
+    vertical-align: auto;
+    border-style:outset;
+  
+}
+
+.disabled {
+   pointer-events:none; //This makes it not clickable
+}

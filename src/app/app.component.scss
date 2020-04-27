@@ -1,0 +1,86 @@
+$menu-whole-size:20rem;
+$menu-close-size:4rem;
+$menu-header-height:4.5rem;
+// $menu-header-color:rgb(173, 173, 253);
+$menu-header-color: #000;
+$menu-body-color:#fff;
+// $menu-body-color:rgb(239, 239, 255);
+
+.menuOpen {
+    position: absolute;
+    border:2px #000000 solid;
+    display:block;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: $menu-whole-size;
+    animation: menuMoveRight 1.5s 1;
+    z-index: 999;
+}
+
+.menuClose {
+
+    border:2px #000000 solid;
+    position: absolute;
+    display:block;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: $menu-close-size - $menu-whole-size;
+    width: $menu-whole-size;
+    opacity:0.5;
+    animation: menuMoveLeft 1.5s 1;
+    z-index: 999;
+}
+
+.pageMenuOpen {
+    position: absolute;
+    display:block;
+    //width: calc(100% - #{$menu-whole-size})-300px;
+    height: 100vh;
+    bottom: 0;
+    top: 0;
+    left: 20rem;
+    //background-color: greenyellow;
+    animation: pageMoveRight 1.5s 1;
+    animation-fill-mode: forwards;
+    //width: 20rem;
+}
+
+.pageMenuClose {
+    position: absolute;
+    display:block;
+    height: 100vh;
+    //width: calc(100% - #{$menu-close-size}-300px);
+    top: 0;
+    left: $menu-close-size;
+    // background-color: greenyellow;
+    animation: pageMoveLeft 1.5s 1;
+    animation-fill-mode: forwards;
+    //width: 20rem;
+}
+
+@keyframes pageMoveRight {
+    0%   {width: calc(100% - #{$menu-close-size}); top: 0; left: $menu-close-size; opacity:1 }
+    100% {width: calc(100% - #{$menu-whole-size}); top: 0; left: $menu-whole-size; opacity:1}
+}
+
+
+@keyframes pageMoveLeft {
+    0%   {width: calc(100% - #{$menu-whole-size}); top: 0; left: $menu-whole-size; opacity:1 }
+    100% {width: calc(100% - #{$menu-close-size}); top: 0; left: $menu-close-size;  opacity:1}
+}
+
+
+@keyframes menuMoveRight {
+    0%   {top: 0; left: -16rem; opacity:0.5 }
+    100% {top: 0; left: 0rem; opacity:1}
+}
+
+
+@keyframes menuMoveLeft {
+    0%   {top: 0; left: 0rem; opacity:1 }
+    100% {top: 0; left: -16rem;  opacity:0.5}
+}

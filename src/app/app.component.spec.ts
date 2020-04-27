@@ -1,6 +1,14 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, fakeAsync, tick } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { By } from '@angular/platform-browser';
+import { element } from 'protractor';
+import { MyService } from './Service/my-service.service';
+import { ValueService } from './Service/value-service.service';
+import { cold } from 'jasmine-marbles'
+import { map } from 'rxjs/operators'
+import { zip } from 'rxjs';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -19,17 +27,6 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
-
-  it(`should have as title 'DemoWebSource'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('DemoWebSource');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to DemoWebSource!');
-  });
 });
+
+

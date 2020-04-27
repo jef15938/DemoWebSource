@@ -1,0 +1,15 @@
+<div class="menu">
+    <div class="menuHeader">
+        <img class="menuImg" src="./assets/leftArrow.svg" (click)="toggleMenu()"
+            [ngStyle]="{'transform': !isMenuOpen?'rotate(180deg)':'rotate(0deg)'}">
+    </div>
+    <ul class="menuArea" [ngClass]="{disabled: !isMenuOpen}">
+        <ng-container *ngFor="let menuItem of menuList">
+            <li [ngClass]="{menuItem: true, clickMenuItem: clickItem.name == menuItem.name}"
+                (click)="onClickMenuItem(menuItem)">
+                {{menuItem.name}}
+            </li>
+        </ng-container>
+    </ul>
+
+</div>

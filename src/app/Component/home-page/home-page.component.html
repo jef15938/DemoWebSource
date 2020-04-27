@@ -1,0 +1,11 @@
+<div class="main" [ngStyle]="isLightOn ? {'background-color': 'white', 'color': 'black'} : {'background-color': 'black', 'color': 'white'}">
+    <div>
+        <button class="switch_btn" id="switch_btn" (click)="clickBtn()">Switch Mode</button>
+    </div>
+    <div>
+        <h1 class="title_text">Welcome to {{ title }}</h1>
+        <img width="200" alt="Angular Logo" src="http://www.neux.com.tw/neuximg/neuxLOGO.png">
+    </div>
+</div>
+
+<!-- [ngStyle]="{'background-color' : isLightOn ? 'white' : 'black', 'color' : isLightOn ? 'black' : 'white'  }" -->
