@@ -1,5 +1,5 @@
 jobs:
-  test:
+  build:
     working_directory: ~/DemoWebSource
     docker:
       - image: circleci/node:10-browsers
