@@ -9,8 +9,8 @@ jobs:
       - image: circleci/node:10-browsers
     steps:
       - add_ssh_keys:
-        fingerprints:
-          - "fe:d9:a3:c9:e7:b4:16:f2:19:ad:0f:b8:3c:b4:6f:ec"
+          fingerprints:
+            - "fe:d9:a3:c9:e7:b4:16:f2:19:ad:0f:b8:3c:b4:6f:ec"
       - checkout
       - restore_cache:
           key: DemoWebSource-{{ .Branch }}-{{ checksum "package-lock.json" }}
@@ -24,8 +24,8 @@ jobs:
           path: coverage
           destination: coverage
       # - run: npm run build -- --prod
-      - run : git config --global user.email "jef15938@gmail.com"
-      - run : git config --global user.name "jef15938"
+      - run: git config --global user.email "jef15938@gmail.com"
+      - run: git config --global user.name "jef15938"
       - run: npx ng deploy --no-silent
       # - run:
       #     name: Creating Dummy Artifacts
