@@ -8,6 +8,9 @@ jobs:
     docker:
       - image: circleci/node:10-browsers
     steps:
+      - add_ssh_keys:
+        fingerprints:
+          - "fe:d9:a3:c9:e7:b4:16:f2:19:ad:0f:b8:3c:b4:6f:ec"
       - checkout
       - restore_cache:
           key: DemoWebSource-{{ .Branch }}-{{ checksum "package-lock.json" }}
