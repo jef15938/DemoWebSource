@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './Component/home-page/home-page.component';
 import { MenuComponent } from './Component/menu/menu.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

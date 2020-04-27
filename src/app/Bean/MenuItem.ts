@@ -17,7 +17,7 @@ export class MenuItem {
         return this._url;
     }
 
-    clone() {
-        return new MenuItem(this._name, this._url);
-    }
+    // clone() {
+    //     return new MenuItem(this._name, this._url);
+    // }
 }

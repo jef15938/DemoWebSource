@@ -1,19 +1,29 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuComponent } from './menu.component';
-import { Router } from '@angular/router';
+import { Router, RouterEvent } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ReplaySubject } from 'rxjs';
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
   let fixture: ComponentFixture<MenuComponent>;
 
+  const eventSubject = new ReplaySubject<RouterEvent>(1)
+  const routerSpy = {
+    navigate: jasmine.createSpy('navigate'),
+    events: eventSubject
+  }
+
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MenuComponent],
-      imports: [RouterTestingModule]
-    })
-      .compileComponents();
+      imports: [RouterTestingModule],
+      providers: [
+        { provide: Router, useValue: routerSpy }
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -23,6 +33,24 @@ describe('MenuComponent', () => {
   });
 
   it('should create', () => {
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
+
+  it('( toggle Menu )', () => {
+    const beforeToggle = component.isMenuOpen;
+    component.toggleMenu();
+    fixture.detectChanges();
+    expect(component.isMenuOpen).toBe(!beforeToggle);
+  });
+
+  it('( click MenuItem )', () => {
+    component.onClickMenuItem(component.menuList[0]);
+    fixture.detectChanges();
+
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['']);
+    // expect(component.isMenuOpen).toBe(!beforeToggle);
+  })
+
+
 });

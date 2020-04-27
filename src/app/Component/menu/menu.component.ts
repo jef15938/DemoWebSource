@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MenuItem } from '../../Bean/MenuItem';
 import { Router, NavigationEnd } from '@angular/router';
+import { version } from '../../../../package.json';
 
 @Component({
   selector: 'app-menu',
@@ -10,21 +11,18 @@ import { Router, NavigationEnd } from '@angular/router';
 export class MenuComponent implements OnInit {
 
   public isMenuOpen: boolean = true;
+  public appVersion: string = ''
   public clickItem: MenuItem;
   public menuList: Array<MenuItem> = [];
   constructor(
-    private router: Router,
-  ) { }
+    private router: Router
+  ) { 
+    this.appVersion = version;
+  }
 
   ngOnInit() {
     this.menuList = this.mockMenuList();
     this.clickItem = this.menuList[0];
-    this.router.events.subscribe((val) => {
-      if (val instanceof NavigationEnd) {
-        let filterMenuList = this.menuList.filter(x => x.url == val.url);
-        this.clickItem = filterMenuList.length > 0 ? filterMenuList[0] : this.menuList[0];
-      }
-    })
   }
   
   @Output() menuStatus: EventEmitter<boolean> = new EventEmitter();
