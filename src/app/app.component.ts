@@ -15,7 +15,7 @@ export class AppComponent{
   }
 
   onMenuStatusChange(isMenuOpen) {
-    console.log("onMenuStatusChange isMenuOpen: ",isMenuOpen);
+    console.log("onMenuStatusChange: ",isMenuOpen);
     this.isMenuOpen = isMenuOpen;
   }
 }
