@@ -1,5 +1,4 @@
 <app-menu [ngClass]="isMenuOpen? 'menuOpen' : 'menuClose'" (menuStatus)="onMenuStatusChange($event)" (swipeRight)="onMenuStatusChange(true)" (swipeLeft)="onMenuStatusChange(false)"></app-menu>
-<!-- <app-pages [ngClass]="isMenuOpen? 'pageMenuOpen' : 'pageMenuClose'"></app-pages> -->
 <div [ngClass]="isMenuOpen? 'pageMenuOpen' : 'pageMenuClose'">
   <router-outlet></router-outlet>
 </div>
