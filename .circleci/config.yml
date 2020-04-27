@@ -1,7 +1,7 @@
 jobs:
   test:
-    steps:
-      working_directory: ~/DemoWebSource
+    working_directory: ~/DemoWebSource
       docker:
       - image: circleci/node:10-browsers
+    steps:
       - checkout
