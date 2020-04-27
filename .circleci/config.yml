@@ -1,9 +1,5 @@
 jobs:
   test:
-    filters:
-      branches:
-        only:
-          - dev
     working_directory: ~/DemoWebSource
     docker:
       - image: circleci/node:10-browsers
@@ -22,10 +18,6 @@ jobs:
           destination: coverage
   
   deploy:
-    filters:
-      branches:
-        only:
-          - master
     working_directory: ~/DemoWebSource
     docker:
       - image: circleci/node:10-browsers
@@ -49,5 +41,15 @@ workflows:
   version: 2
   test-and-deploy:
     jobs: 
-      - test
-      - deploy
+      - test:
+          filters:
+            branches:
+              only:
+                - dev
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - test
