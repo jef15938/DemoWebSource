@@ -21,7 +21,7 @@ jobs:
           path: coverage
           destination: coverage
       # - run: npm run build -- --prod
-      - run: ng deploy
+      - run: npx ng deploy
       # - run:
       #     name: Creating Dummy Artifacts
       #       command: |
