@@ -24,16 +24,6 @@ jobs:
       - store_artifacts:
           path: coverage
           destination: coverage
-      # - run: npm run build -- --prod
       - run: git config --global user.email "jef15938@gmail.com"
       - run: git config --global user.name "jef15938"
-      - run: npx ng deploy --no-silent
-      # - run:
-      #     name: Creating Dummy Artifacts
-      #       command: |
-      #         echo "my artifact file" > /dist;
-      #         mkdir /dist;
-      #         # echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
-      # - store_artifacts:
-      #   path: /DemoWebSource/dist
-      #   destination: /dist
+      - run: npx ng deploy --no-silent --base-href=/DemoWebSource/
