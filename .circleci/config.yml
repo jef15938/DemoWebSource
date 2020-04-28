@@ -23,7 +23,8 @@ jobs:
       - run: npm run updateReadme
       - run: git config --global user.email "jef15938@gmail.com"
       - run: git config --global user.name "jef15938"
-      - run: git add . && git commit -m "update README"
+      - run: git add .
+      - run: git commit -m "update README" | echo 'nothing commit'
       - run: git push
 
   merge-to-master:
