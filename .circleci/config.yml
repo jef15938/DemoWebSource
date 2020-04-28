@@ -25,7 +25,7 @@ jobs:
       - run: git config --global user.name "jef15938"
       - run: git add .
       - run: git commit -m "update README" | echo 'nothing commit' || true
-      - run: git push
+      - run: git push --set-upstream origin dev
 
   merge-to-master:
     working_directory: ~/DemoWebSource
