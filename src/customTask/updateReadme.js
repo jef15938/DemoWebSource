@@ -1,7 +1,5 @@
-// import { version } from '../../package.json';
 const fs = require('fs');
 const path = require('path');
-const util = require('util');
 const package = require("../../package.json");
 
 fs.readFile(path.resolve(__dirname, '../../README_SOURCE.md'), "utf8", (err, data) => {
