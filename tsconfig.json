@@ -17,9 +17,6 @@
       "es2018",
       "dom"
     ],
-    "types": [
-      "node"
-    ],
     "resolveJsonModule": true,
     "esModuleInterop": true
   },

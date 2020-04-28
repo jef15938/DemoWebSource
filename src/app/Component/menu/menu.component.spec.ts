@@ -44,12 +44,11 @@ describe('MenuComponent', () => {
     expect(component.isMenuOpen).toBe(!beforeToggle);
   });
 
-  it('( click MenuItem )', () => {
+  it('( router test )', () => {
     component.onClickMenuItem(component.menuList[0]);
     fixture.detectChanges();
 
     expect(routerSpy.navigate).toHaveBeenCalledWith(['']);
-    // expect(component.isMenuOpen).toBe(!beforeToggle);
   })
 
 

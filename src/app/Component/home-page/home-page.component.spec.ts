@@ -28,6 +28,7 @@ describe('HomePageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 
   it(' ( check html comtent ) should render title in a h1 tag', () => {
     const compiled = fixture.debugElement.nativeElement;
