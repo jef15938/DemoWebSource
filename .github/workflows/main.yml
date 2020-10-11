@@ -36,7 +36,7 @@ jobs:
           git config --global user.email "jef15938@gmail.com"
           git config --global user.name "jef15938"
           git add .
-          git commit -m "update README" | echo 'nothing commit' || true
+          git commit -m "update README" || true
           git push
           
       - uses: actions/checkout@v2
