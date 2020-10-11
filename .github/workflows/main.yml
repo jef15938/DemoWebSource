@@ -38,9 +38,11 @@ jobs:
           git commit -m "update README" | echo 'nothing commit' || true
           git push --set-upstream origin dev
           
+      - uses: actions/checkout@v2
+        with:
+          ref: 'master'
       - name: merge to master
         run: |
           git config --global user.email "jef15938@gmail.com"
           git config --global user.name "jef15938"
-          git checkout master && git reset origin/master --hard
           git merge dev && git push
