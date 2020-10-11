@@ -47,7 +47,6 @@ jobs:
         run: |
           git config --global user.email "jef15938@gmail.com"
           git config --global user.name "jef15938"
-          git pull origin master --allow-unrelated-histories
           git log -1
           git log origin/dev -1
-          git merge origin/dev && git push
+          git merge origin/dev --allow-unrelated-histories && git push
