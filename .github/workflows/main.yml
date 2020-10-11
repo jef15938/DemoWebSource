@@ -50,5 +50,5 @@ jobs:
           git reset origin/master --hard
           git status
           git log -1
-          git log origin/dev -1
-          git merge origin/dev --allow-unrelated-histories && git push
+          git log dev -1
+          git merge dev && git push
