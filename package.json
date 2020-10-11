@@ -1,6 +1,6 @@
 {
   "name": "demo-web-source",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
