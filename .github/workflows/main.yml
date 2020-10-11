@@ -46,4 +46,5 @@ jobs:
         run: |
           git config --global user.email "jef15938@gmail.com"
           git config --global user.name "jef15938"
+          git reset origin/master --hard
           git merge origin/dev --allow-unrelated-histories && git push
