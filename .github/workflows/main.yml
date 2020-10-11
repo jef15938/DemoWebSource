@@ -32,11 +32,15 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: push to dev
         run: |
+          git config --global user.email "jef15938@gmail.com"
+          git config --global user.name "jef15938"
           git add .
           git commit -m "update README" | echo 'nothing commit' || true
           git push --set-upstream origin dev
           
       - name: merge to master
         run: |
-          git git checkout master && git reset origin/master --hard
+          git config --global user.email "jef15938@gmail.com"
+          git config --global user.name "jef15938"
+          git checkout master && git reset origin/master --hard
           git merge dev && git push
