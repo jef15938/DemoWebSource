@@ -37,7 +37,7 @@ jobs:
           git config --global user.name "jef15938"
           git add .
           git commit -m "update README" | echo 'nothing commit' || true
-          git push --set-upstream origin dev
+          git push
           
       - uses: actions/checkout@v2
         with:
@@ -46,4 +46,4 @@ jobs:
         run: |
           git config --global user.email "jef15938@gmail.com"
           git config --global user.name "jef15938"
-          git merge dev && git push
+          git merge origin/dev --allow-unrelated-histories && git push
