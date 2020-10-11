@@ -48,7 +48,6 @@ jobs:
           git config --global user.email "jef15938@gmail.com"
           git config --global user.name "jef15938"
           git reset origin/master --hard
-          git branch
-          git status
           git log -1
-          git merge dev && git push
+          git log origin/dev -1
+          git merge origin/dev && git push
