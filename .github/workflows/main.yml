@@ -27,18 +27,18 @@ jobs:
       - name: npm install
         run: npm install
       
-      - name: updateReadme
-        run: npm run updateReadme
+      # - name: updateReadme
+      #   run: npm run updateReadme
 
       # Runs a set of commands using the runners shell
-      - name: push to dev
-        run: |
-          git config --global user.email "jef15938@gmail.com"
-          git config --global user.name "jef15938"
-          git add .
-          git commit -m "update README" || true
-          git push
-          git log -1
+      # - name: push to dev
+      #   run: |
+      #     git config --global user.email "jef15938@gmail.com"
+      #     git config --global user.name "jef15938"
+      #     git add .
+      #     git commit -m "update README" || true
+      #     git push
+      #     git log -1
           
       - uses: actions/checkout@v2
         with:
