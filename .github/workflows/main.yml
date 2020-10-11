@@ -38,6 +38,7 @@ jobs:
           git add .
           git commit -m "update README" || true
           git push
+          git log -1
           
       - uses: actions/checkout@v2
         with:
@@ -47,4 +48,5 @@ jobs:
           git config --global user.email "jef15938@gmail.com"
           git config --global user.name "jef15938"
           git reset origin/master --hard
+          git log -1
           git merge origin/dev --allow-unrelated-histories && git push
