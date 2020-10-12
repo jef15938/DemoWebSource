@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/jef15938/DemoWebSource/tree/dev.svg?style=svg)](https://circleci.com/gh/jef15938/DemoWebSource/tree/dev)    [![Version](https://badgen.net/badge/Version/0.0.21/cyan)]()  [![GitHub Pages](https://badgen.net/badge/icon/GitHub%20Pages?icon=github&label)](https://jef15938.github.io/DemoWebSource/)
+![UpdateReadMe & Push to master](https://github.com/jef15938/DemoWebSource/workflows/UpdateReadMe%20&%20Push%20to%20master/badge.svg)   [![Version](https://badgen.net/badge/Version/0.0.21/cyan)]()  [![GitHub Pages](https://badgen.net/badge/icon/GitHub%20Pages?icon=github&label)](https://jef15938.github.io/DemoWebSource/)
 
 # DemoWebSource
 
